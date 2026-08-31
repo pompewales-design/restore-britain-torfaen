@@ -16,3 +16,4 @@ Edit files in `public/` and push the changes to GitHub. Cloudflare Workers Build
 In Cloudflare: Workers & Pages → `shiny-grass-9540` → Settings → Variables and Secrets. Edit the `MEMBERS_PASSWORD` Secret and deploy the change.
 
 Do not put the password into this repository.
+Cloudflare automatic deployment enabled.
