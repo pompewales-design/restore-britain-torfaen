@@ -7,8 +7,5 @@
     "directory": "./public",
     "binding": "ASSETS",
     "run_worker_first": ["/members", "/members/*"]
-  },
-  "secrets": {
-    "required": ["MEMBERS_PASSWORD"]
   }
-}
+  
