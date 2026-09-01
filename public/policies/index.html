@@ -3,225 +3,327 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Policy Papers | Restore Britain Torfaen</title>
+
 <meta name="description" content="Restore Britain policy papers for the Torfaen local branch.">
 
 <style>
 :root{
+  --black:#050505;
+  --dark:#101010;
   --navy:#062451;
-  --red:#e31b23;
-  --ink:#233b5d;
-  --pale:#f4f6f9;
-  --line:#dfe4ea
+  --red:#ed1c24;
+  --white:#ffffff;
+  --text:#dddddd;
+  --muted:#aeb4bd;
+  --line:#292929;
 }
 
 *{
-  box-sizing:border-box
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
-  color:var(--ink);
-  background:#fff
+  color:var(--text);
+  background:var(--black);
+  line-height:1.6;
 }
+
+/* TOP RED LINE */
 
 .topline{
   height:5px;
-  background:var(--red)
+  background:var(--red);
 }
+
+/* HEADER */
 
 header{
-  background:#fff;
-  text-align:center;
-  padding:34px 20px 28px;
-  border-bottom:1px solid #eee
+  background:#050505;
+  border-bottom:1px solid #222;
+  padding:28px 20px 24px;
 }
 
-header img{
-  max-width:360px;
-  width:70%;
-  height:auto
+.header-inner{
+  max-width:1180px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
 }
+
+.logo{
+  display:block;
+  width:210px;
+}
+
+.logo img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+/* NAVIGATION */
 
 nav{
-  background:var(--navy);
   display:flex;
-  justify-content:center;
-  gap:6px;
+  justify-content:flex-end;
+  align-items:center;
+  gap:4px;
   flex-wrap:wrap;
-  padding:10px 16px
 }
 
 nav a{
   color:#fff;
   text-decoration:none;
-  padding:10px 16px;
-  border-radius:5px;
-  font-weight:700
+  padding:9px 13px;
+  border-radius:4px;
+  font-size:14px;
+  font-weight:700;
 }
 
 nav a:hover,
 nav a.active{
-  background:#fff;
-  color:var(--navy)
+  background:var(--red);
+  color:#fff;
 }
 
+/* MAIN */
+
 main{
-  background:var(--pale);
-  padding:58px 20px 70px
+  background:var(--black);
+  padding:65px 20px 80px;
 }
 
 .wrap{
   max-width:1120px;
-  margin:auto
+  margin:auto;
 }
+
+/* PAGE INTRO */
 
 .kicker{
   text-align:center;
   color:var(--red);
-  font-size:14px;
-  letter-spacing:2px;
+  font-size:13px;
+  letter-spacing:2.5px;
   font-weight:800;
-  text-transform:uppercase
+  text-transform:uppercase;
 }
 
 h1{
-  margin:8px 0 14px;
+  margin:8px 0 16px;
   text-align:center;
-  color:var(--navy);
-  font-family:Georgia,serif;
-  font-size:52px
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:52px;
+  line-height:1.1;
 }
 
 .intro{
   max-width:760px;
-  margin:0 auto 40px;
+  margin:0 auto 48px;
   text-align:center;
+  color:#cfd3d8;
   font-size:18px;
-  line-height:1.65
+  line-height:1.65;
 }
+
+/* POLICY GRID */
 
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:24px
+  gap:22px;
 }
 
+/* POLICY CARD */
+
 .card{
-  background:#fff;
+  background:var(--dark);
   border:1px solid var(--line);
-  border-radius:12px;
+  border-radius:3px;
   overflow:hidden;
-  box-shadow:0 3px 12px rgba(0,0,0,.05);
   display:flex;
-  flex-direction:column
+  flex-direction:column;
+  min-height:100%;
+  transition:transform .2s ease,border-color .2s ease;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  border-color:#444;
 }
 
 .card-top{
-  height:8px;
-  background:var(--navy)
+  height:6px;
+  background:var(--red);
 }
 
 .card-body{
   padding:25px;
   display:flex;
   flex-direction:column;
-  height:100%
+  height:100%;
 }
 
 .date{
-  font-size:13px;
-  color:#68778c;
+  font-size:12px;
+  color:#999;
   font-weight:700;
   text-transform:uppercase;
-  letter-spacing:.7px
+  letter-spacing:1px;
 }
 
 h2{
-  font-family:Georgia,serif;
-  color:var(--navy);
-  font-size:27px;
+  font-family:Georgia,"Times New Roman",serif;
+  color:#fff;
+  font-size:26px;
   line-height:1.15;
-  margin:10px 0 13px
+  margin:10px 0 14px;
 }
 
 .card p{
+  color:#c8c8c8;
   line-height:1.6;
-  margin:0 0 22px
+  margin:0 0 24px;
+  font-size:15px;
 }
+
+/* BUTTON */
 
 .btn{
   margin-top:auto;
-  display:inline-block;
+  display:block;
   text-align:center;
   background:var(--red);
   color:#fff;
   text-decoration:none;
   font-weight:700;
   padding:12px 16px;
-  border-radius:6px
+  border-radius:2px;
+  transition:background .2s ease,transform .2s ease;
 }
 
 .btn:hover{
-  filter:brightness(.92)
+  background:#ff2931;
+  transform:translateY(-1px);
 }
+
+/* INFORMATION NOTE */
 
 .note{
   max-width:900px;
-  margin:42px auto 0;
-  background:#fff;
-  border-left:5px solid var(--red);
-  padding:18px 22px;
-  line-height:1.6
+  margin:48px auto 0;
+  background:#111;
+  border-left:4px solid var(--red);
+  padding:20px 24px;
+  color:#c8c8c8;
+  line-height:1.65;
 }
 
-footer{
-  background:var(--navy);
+.note strong{
   color:#fff;
+}
+
+/* FOOTER */
+
+footer{
+  background:#050505;
+  border-top:1px solid #222;
+  color:#888;
   text-align:center;
-  padding:28px 20px
+  padding:30px 20px;
 }
 
 footer a{
-  color:#fff
+  color:#fff;
+  text-decoration:none;
 }
+
+footer a:hover{
+  color:var(--red);
+}
+
+/* TABLET */
 
 @media(max-width:900px){
-  .grid{
-    grid-template-columns:repeat(2,1fr)
-  }
-}
 
-@media(max-width:620px){
-  header{
-    padding:24px 15px
+  .header-inner{
+    flex-direction:column;
+    justify-content:center;
   }
 
   nav{
-    justify-content:stretch
-  }
-
-  nav a{
-    flex:1 1 45%;
-    text-align:center
-  }
-
-  main{
-    padding:42px 15px
-  }
-
-  h1{
-    font-size:40px
+    justify-content:center;
   }
 
   .grid{
-    grid-template-columns:1fr
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+/* MOBILE */
+
+@media(max-width:620px){
+
+  header{
+    padding:24px 15px 20px;
+  }
+
+  .logo{
+    width:180px;
+  }
+
+  nav{
+    width:100%;
+    justify-content:center;
+  }
+
+  nav a{
+    font-size:13px;
+    padding:8px 10px;
+  }
+
+  main{
+    padding:45px 15px 60px;
+  }
+
+  h1{
+    font-size:40px;
   }
 
   .intro{
-    font-size:16px
+    font-size:16px;
+    margin-bottom:35px;
   }
+
+  .grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .card-body{
+    padding:22px;
+  }
+
+  h2{
+    font-size:25px;
+  }
+
+  .note{
+    padding:18px;
+  }
+
 }
 </style>
 </head>
@@ -231,27 +333,36 @@ footer a{
 <div class="topline"></div>
 
 <header>
-  <a href="/">
-    <img src="/logo.png" alt="Restore Britain">
-  </a>
+  <div class="header-inner">
+
+    <a class="logo" href="/">
+      <img src="/logo.png" alt="Restore Britain">
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/policies/" class="active">Policies</a>
+      <a href="/news/">News</a>
+      <a href="/foi/">FOI</a>
+      <a href="/members/">Members</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+
+  </div>
 </header>
 
-<nav aria-label="Main navigation">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/policies/" class="active">Policies</a>
-  <a href="/news/">News</a>
-  <a href="/foi/">FOI</a>
-  <a href="/members/">Members</a>
-  <a href="/contact/">Contact</a>
-</nav>
-
 <main>
+
 <div class="wrap">
 
-  <div class="kicker">Restore Britain Torfaen</div>
+  <div class="kicker">
+    Restore Britain Torfaen
+  </div>
 
-  <h1>Policy Papers</h1>
+  <h1>
+    Policy Papers
+  </h1>
 
   <p class="intro">
     A central collection of Restore Britain policy papers.
@@ -260,15 +371,26 @@ footer a{
 
   <section class="grid">
 
+    <!-- 1 -->
+
     <article class="card">
       <div class="card-top"></div>
+
       <div class="card-body">
-        <div class="date">3 August 2026</div>
-        <h2>The Wealth of Our Nation</h2>
+
+        <div class="date">
+          3 August 2026
+        </div>
+
+        <h2>
+          The Wealth of Our Nation
+        </h2>
+
         <p>
           A paper examining Britain's economic position and setting out
           Restore Britain's proposals for reducing state spending and taxation.
         </p>
+
         <a
           class="btn"
           href="/policies/The_Wealth_of_Our_Nation__Restore_Britain’s_Economic_Philosophy.pdf"
@@ -276,18 +398,31 @@ footer a{
           rel="noopener">
           Read the full paper
         </a>
+
       </div>
     </article>
 
+
+    <!-- 2 -->
+
     <article class="card">
       <div class="card-top"></div>
+
       <div class="card-body">
-        <div class="date">24 July 2026</div>
-        <h2>Policy on School Fines</h2>
+
+        <div class="date">
+          24 July 2026
+        </div>
+
+        <h2>
+          Policy on School Fines
+        </h2>
+
         <p>
           A proposal concerning term-time family leave, parental responsibility
           and the current approach to school attendance fines.
         </p>
+
         <a
           class="btn"
           href="/policies/Holidays_during_school_term_time.pdf"
@@ -295,18 +430,31 @@ footer a{
           rel="noopener">
           Read the full paper
         </a>
+
       </div>
     </article>
 
+
+    <!-- 3 -->
+
     <article class="card">
       <div class="card-top"></div>
+
       <div class="card-body">
-        <div class="date">1 July 2026</div>
-        <h2>Policing Policy Paper</h2>
+
+        <div class="date">
+          1 July 2026
+        </div>
+
+        <h2>
+          Policing Policy Paper
+        </h2>
+
         <p>
           Proposals for structural and institutional reform of policing,
           including accountability, training and policing standards.
         </p>
+
         <a
           class="btn"
           href="/policies/Restoring_British_Policing_(2).pdf"
@@ -314,18 +462,31 @@ footer a{
           rel="noopener">
           Read the full paper
         </a>
+
       </div>
     </article>
 
+
+    <!-- 4 -->
+
     <article class="card">
       <div class="card-top"></div>
+
       <div class="card-body">
-        <div class="date">20 May 2026</div>
-        <h2>Energy Policy Paper</h2>
+
+        <div class="date">
+          20 May 2026
+        </div>
+
+        <h2>
+          Energy Policy Paper
+        </h2>
+
         <p>
           The Energy Security Outlook sets out Restore Britain's approach
           to domestic energy production, nuclear power and energy costs.
         </p>
+
         <a
           class="btn"
           href="/policies/Restore_Britain_Energy_Security_Outlook.pdf"
@@ -333,18 +494,31 @@ footer a{
           rel="noopener">
           Read the full paper
         </a>
+
       </div>
     </article>
 
+
+    <!-- 5 -->
+
     <article class="card">
       <div class="card-top"></div>
+
       <div class="card-body">
-        <div class="date">17 March 2026</div>
-        <h2>Abolish Inheritance Tax</h2>
+
+        <div class="date">
+          17 March 2026
+        </div>
+
+        <h2>
+          Abolish Inheritance Tax
+        </h2>
+
         <p>
           A paper making the case for abolishing inheritance tax and
           considering its effects on families, farms and small businesses.
         </p>
+
         <a
           class="btn"
           href="/policies/Abolish_Inheritance_Tax.pdf"
@@ -352,18 +526,31 @@ footer a{
           rel="noopener">
           Read the full paper
         </a>
+
       </div>
     </article>
 
+
+    <!-- 6 -->
+
     <article class="card">
       <div class="card-top"></div>
+
       <div class="card-body">
-        <div class="date">25 February 2026</div>
-        <h2>Retaking the English Castle</h2>
+
+        <div class="date">
+          25 February 2026
+        </div>
+
+        <h2>
+          Retaking the English Castle
+        </h2>
+
         <p>
           A policy paper focused on self-defence, occupier's liability
           and related legal proposals.
         </p>
+
         <a
           class="btn"
           href="/policies/Retaking_the_English_Castle.pdf"
@@ -371,18 +558,31 @@ footer a{
           rel="noopener">
           Read the full paper
         </a>
+
       </div>
     </article>
 
+
+    <!-- 7 -->
+
     <article class="card">
       <div class="card-top"></div>
+
       <div class="card-body">
-        <div class="date">7 January 2026</div>
-        <h2>Restoring the British Pub</h2>
+
+        <div class="date">
+          7 January 2026
+        </div>
+
+        <h2>
+          Restoring the British Pub
+        </h2>
+
         <p>
           A programme of proposals addressing business rates, VAT,
           duties, investment, employment and licensing in the pub sector.
         </p>
+
         <a
           class="btn"
           href="/policies/Restoring_the_British_Pub.pdf"
@@ -390,19 +590,32 @@ footer a{
           rel="noopener">
           Read the full paper
         </a>
+
       </div>
     </article>
 
+
+    <!-- 8 -->
+
     <article class="card">
       <div class="card-top"></div>
+
       <div class="card-body">
-        <div class="date">9 October 2025</div>
-        <h2>Mass Deportations</h2>
+
+        <div class="date">
+          9 October 2025
+        </div>
+
+        <h2>
+          Mass Deportations
+        </h2>
+
         <p>
           A paper setting out Restore Britain's proposed legal and
           operational approach to removing people it considers to be
           living in Britain illegally.
         </p>
+
         <a
           class="btn"
           href="/policies/Mass_Deportations__Legitimacy__Legality__and_Logistics.pdf"
@@ -410,26 +623,37 @@ footer a{
           rel="noopener">
           Read the full paper
         </a>
+
       </div>
     </article>
 
   </section>
 
+
   <div class="note">
+
     <strong>About this page:</strong>
+
     These policy papers are hosted locally on the Restore Britain
     Torfaen website for easy access. The summaries above are provided
     for navigation and do not replace the full documents.
+
   </div>
 
 </div>
+
 </main>
 
 <footer>
-  <div>Restore Britain Torfaen Local Branch</div>
+
+  <div>
+    Restore Britain Torfaen Local Branch
+  </div>
+
   <div style="margin-top:8px">
     <a href="/contact/">Contact the branch</a>
   </div>
+
 </footer>
 
 </body>
