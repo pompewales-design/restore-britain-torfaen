@@ -5,41 +5,235 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Policy Papers | Restore Britain Torfaen</title>
 <meta name="description" content="Restore Britain policy papers for the Torfaen local branch.">
+
 <style>
-:root{--navy:#062451;--red:#e31b23;--ink:#233b5d;--pale:#f4f6f9;--line:#dfe4ea}
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
-.topline{height:5px;background:var(--red)}
-header{background:#fff;text-align:center;padding:34px 20px 28px;border-bottom:1px solid #eee}
-header img{max-width:360px;width:70%;height:auto}
-nav{background:var(--navy);display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:10px 16px}
-nav a{color:#fff;text-decoration:none;padding:10px 16px;border-radius:5px;font-weight:700}
-nav a:hover,nav a.active{background:#fff;color:var(--navy)}
-main{background:var(--pale);padding:58px 20px 70px}
-.wrap{max-width:1120px;margin:auto}
-.kicker{text-align:center;color:var(--red);font-size:14px;letter-spacing:2px;font-weight:800;text-transform:uppercase}
-h1{margin:8px 0 14px;text-align:center;color:var(--navy);font-family:Georgia,serif;font-size:52px}
-.intro{max-width:760px;margin:0 auto 40px;text-align:center;font-size:18px;line-height:1.65}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.05);display:flex;flex-direction:column}
-.card-top{height:8px;background:var(--navy)}
-.card-body{padding:25px;display:flex;flex-direction:column;height:100%}
-.date{font-size:13px;color:#68778c;font-weight:700;text-transform:uppercase;letter-spacing:.7px}
-h2{font-family:Georgia,serif;color:var(--navy);font-size:27px;line-height:1.15;margin:10px 0 13px}
-.card p{line-height:1.6;margin:0 0 22px}
-.btn{margin-top:auto;display:inline-block;text-align:center;background:var(--red);color:#fff;text-decoration:none;font-weight:700;padding:12px 16px;border-radius:6px}
-.btn:hover{filter:brightness(.92)}
-.note{max-width:900px;margin:42px auto 0;background:#fff;border-left:5px solid var(--red);padding:18px 22px;line-height:1.6}
-footer{background:var(--navy);color:#fff;text-align:center;padding:28px 20px}
-footer a{color:#fff}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){header{padding:24px 15px}nav{justify-content:stretch}nav a{flex:1 1 45%;text-align:center}main{padding:42px 15px}h1{font-size:40px}.grid{grid-template-columns:1fr}.intro{font-size:16px}}
+:root{
+  --navy:#062451;
+  --red:#e31b23;
+  --ink:#233b5d;
+  --pale:#f4f6f9;
+  --line:#dfe4ea
+}
+
+*{
+  box-sizing:border-box
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+  background:#fff
+}
+
+.topline{
+  height:5px;
+  background:var(--red)
+}
+
+header{
+  background:#fff;
+  text-align:center;
+  padding:34px 20px 28px;
+  border-bottom:1px solid #eee
+}
+
+header img{
+  max-width:360px;
+  width:70%;
+  height:auto
+}
+
+nav{
+  background:var(--navy);
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  flex-wrap:wrap;
+  padding:10px 16px
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  padding:10px 16px;
+  border-radius:5px;
+  font-weight:700
+}
+
+nav a:hover,
+nav a.active{
+  background:#fff;
+  color:var(--navy)
+}
+
+main{
+  background:var(--pale);
+  padding:58px 20px 70px
+}
+
+.wrap{
+  max-width:1120px;
+  margin:auto
+}
+
+.kicker{
+  text-align:center;
+  color:var(--red);
+  font-size:14px;
+  letter-spacing:2px;
+  font-weight:800;
+  text-transform:uppercase
+}
+
+h1{
+  margin:8px 0 14px;
+  text-align:center;
+  color:var(--navy);
+  font-family:Georgia,serif;
+  font-size:52px
+}
+
+.intro{
+  max-width:760px;
+  margin:0 auto 40px;
+  text-align:center;
+  font-size:18px;
+  line-height:1.65
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 3px 12px rgba(0,0,0,.05);
+  display:flex;
+  flex-direction:column
+}
+
+.card-top{
+  height:8px;
+  background:var(--navy)
+}
+
+.card-body{
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+  height:100%
+}
+
+.date{
+  font-size:13px;
+  color:#68778c;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.7px
+}
+
+h2{
+  font-family:Georgia,serif;
+  color:var(--navy);
+  font-size:27px;
+  line-height:1.15;
+  margin:10px 0 13px
+}
+
+.card p{
+  line-height:1.6;
+  margin:0 0 22px
+}
+
+.btn{
+  margin-top:auto;
+  display:inline-block;
+  text-align:center;
+  background:var(--red);
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  padding:12px 16px;
+  border-radius:6px
+}
+
+.btn:hover{
+  filter:brightness(.92)
+}
+
+.note{
+  max-width:900px;
+  margin:42px auto 0;
+  background:#fff;
+  border-left:5px solid var(--red);
+  padding:18px 22px;
+  line-height:1.6
+}
+
+footer{
+  background:var(--navy);
+  color:#fff;
+  text-align:center;
+  padding:28px 20px
+}
+
+footer a{
+  color:#fff
+}
+
+@media(max-width:900px){
+  .grid{
+    grid-template-columns:repeat(2,1fr)
+  }
+}
+
+@media(max-width:620px){
+  header{
+    padding:24px 15px
+  }
+
+  nav{
+    justify-content:stretch
+  }
+
+  nav a{
+    flex:1 1 45%;
+    text-align:center
+  }
+
+  main{
+    padding:42px 15px
+  }
+
+  h1{
+    font-size:40px
+  }
+
+  .grid{
+    grid-template-columns:1fr
+  }
+
+  .intro{
+    font-size:16px
+  }
+}
 </style>
 </head>
+
 <body>
+
 <div class="topline"></div>
+
 <header>
-  <a href="/"><img src="/logo.png" alt="Restore Britain"></a>
+  <a href="/">
+    <img src="/logo.png" alt="Restore Britain">
+  </a>
 </header>
 
 <nav aria-label="Main navigation">
@@ -54,81 +248,189 @@ footer a{color:#fff}
 
 <main>
 <div class="wrap">
+
   <div class="kicker">Restore Britain Torfaen</div>
+
   <h1>Policy Papers</h1>
+
   <p class="intro">
-    A central collection of Restore Britain policy papers. Select a paper below
-    to read the full document on the official Restore Britain website.
+    A central collection of Restore Britain policy papers.
+    Select a paper below to read the full document.
   </p>
 
   <section class="grid">
-    <article class="card"><div class="card-top"></div><div class="card-body">
-      <div class="date">3 August 2026</div>
-      <h2>The Wealth of Our Nation</h2>
-      <p>A paper examining Britain's economic position and setting out Restore Britain's proposals for reducing state spending and taxation.</p>
-      <a class="btn" href="https://www.restorebritain.org.uk/the_wealth_of_our_nation" target="_blank" rel="noopener">Read the full paper</a>
-    </div></article>
 
-    <article class="card"><div class="card-top"></div><div class="card-body">
-      <div class="date">24 July 2026</div>
-      <h2>Policy on School Fines</h2>
-      <p>A proposal concerning term-time family leave, parental responsibility and the current approach to school attendance fines.</p>
-      <a class="btn" href="https://www.restorebritain.org.uk/policy_on_school_fines" target="_blank" rel="noopener">Read the full paper</a>
-    </div></article>
+    <article class="card">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="date">3 August 2026</div>
+        <h2>The Wealth of Our Nation</h2>
+        <p>
+          A paper examining Britain's economic position and setting out
+          Restore Britain's proposals for reducing state spending and taxation.
+        </p>
+        <a
+          class="btn"
+          href="/policies/The_Wealth_of_Our_Nation__Restore_Britain’s_Economic_Philosophy.pdf"
+          target="_blank"
+          rel="noopener">
+          Read the full paper
+        </a>
+      </div>
+    </article>
 
-    <article class="card"><div class="card-top"></div><div class="card-body">
-      <div class="date">1 July 2026</div>
-      <h2>Policing Policy Paper</h2>
-      <p>Proposals for structural and institutional reform of policing, including accountability, training and policing standards.</p>
-      <a class="btn" href="https://www.restorebritain.org.uk/policing_policy_paper" target="_blank" rel="noopener">Read the full paper</a>
-    </div></article>
+    <article class="card">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="date">24 July 2026</div>
+        <h2>Policy on School Fines</h2>
+        <p>
+          A proposal concerning term-time family leave, parental responsibility
+          and the current approach to school attendance fines.
+        </p>
+        <a
+          class="btn"
+          href="/policies/Holidays_during_school_term_time.pdf"
+          target="_blank"
+          rel="noopener">
+          Read the full paper
+        </a>
+      </div>
+    </article>
 
-    <article class="card"><div class="card-top"></div><div class="card-body">
-      <div class="date">20 May 2026</div>
-      <h2>Energy Policy Paper</h2>
-      <p>The Energy Security Outlook sets out Restore Britain's approach to domestic energy production, nuclear power and energy costs.</p>
-      <a class="btn" href="https://www.restorebritain.org.uk/energy_policy_paper" target="_blank" rel="noopener">Read the full paper</a>
-    </div></article>
+    <article class="card">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="date">1 July 2026</div>
+        <h2>Policing Policy Paper</h2>
+        <p>
+          Proposals for structural and institutional reform of policing,
+          including accountability, training and policing standards.
+        </p>
+        <a
+          class="btn"
+          href="/policies/Restoring_British_Policing_(2).pdf"
+          target="_blank"
+          rel="noopener">
+          Read the full paper
+        </a>
+      </div>
+    </article>
 
-    <article class="card"><div class="card-top"></div><div class="card-body">
-      <div class="date">17 March 2026</div>
-      <h2>Abolish Inheritance Tax</h2>
-      <p>A paper making the case for abolishing inheritance tax and considering its effects on families, farms and small businesses.</p>
-      <a class="btn" href="https://www.restorebritain.org.uk/policy_paper_abolish_inheritance_tax" target="_blank" rel="noopener">Read the full paper</a>
-    </div></article>
+    <article class="card">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="date">20 May 2026</div>
+        <h2>Energy Policy Paper</h2>
+        <p>
+          The Energy Security Outlook sets out Restore Britain's approach
+          to domestic energy production, nuclear power and energy costs.
+        </p>
+        <a
+          class="btn"
+          href="/policies/Restore_Britain_Energy_Security_Outlook.pdf"
+          target="_blank"
+          rel="noopener">
+          Read the full paper
+        </a>
+      </div>
+    </article>
 
-    <article class="card"><div class="card-top"></div><div class="card-body">
-      <div class="date">25 February 2026</div>
-      <h2>Retaking the English Castle</h2>
-      <p>A policy paper focused on self-defence, occupier's liability and related legal proposals.</p>
-      <a class="btn" href="https://www.restorebritain.org.uk/policy_paper_retaking_the_english_castle" target="_blank" rel="noopener">Read the full paper</a>
-    </div></article>
+    <article class="card">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="date">17 March 2026</div>
+        <h2>Abolish Inheritance Tax</h2>
+        <p>
+          A paper making the case for abolishing inheritance tax and
+          considering its effects on families, farms and small businesses.
+        </p>
+        <a
+          class="btn"
+          href="/policies/Abolish_Inheritance_Tax.pdf"
+          target="_blank"
+          rel="noopener">
+          Read the full paper
+        </a>
+      </div>
+    </article>
 
-    <article class="card"><div class="card-top"></div><div class="card-body">
-      <div class="date">7 January 2026</div>
-      <h2>Restoring the British Pub</h2>
-      <p>A programme of proposals addressing business rates, VAT, duties, investment, employment and licensing in the pub sector.</p>
-      <a class="btn" href="https://www.restorebritain.org.uk/restoring_the_british_pub" target="_blank" rel="noopener">Read the full paper</a>
-    </div></article>
+    <article class="card">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="date">25 February 2026</div>
+        <h2>Retaking the English Castle</h2>
+        <p>
+          A policy paper focused on self-defence, occupier's liability
+          and related legal proposals.
+        </p>
+        <a
+          class="btn"
+          href="/policies/Retaking_the_English_Castle.pdf"
+          target="_blank"
+          rel="noopener">
+          Read the full paper
+        </a>
+      </div>
+    </article>
 
-    <article class="card"><div class="card-top"></div><div class="card-body">
-      <div class="date">9 October 2025</div>
-      <h2>Mass Deportations</h2>
-      <p>A paper setting out Restore Britain's proposed legal and operational approach to removing people it considers to be living in Britain illegally.</p>
-      <a class="btn" href="https://www.restorebritain.org.uk/pp_mass_deportations_legitimacy_legality_and_logistics" target="_blank" rel="noopener">Read the full paper</a>
-    </div></article>
+    <article class="card">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="date">7 January 2026</div>
+        <h2>Restoring the British Pub</h2>
+        <p>
+          A programme of proposals addressing business rates, VAT,
+          duties, investment, employment and licensing in the pub sector.
+        </p>
+        <a
+          class="btn"
+          href="/policies/Restoring_the_British_Pub.pdf"
+          target="_blank"
+          rel="noopener">
+          Read the full paper
+        </a>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="date">9 October 2025</div>
+        <h2>Mass Deportations</h2>
+        <p>
+          A paper setting out Restore Britain's proposed legal and
+          operational approach to removing people it considers to be
+          living in Britain illegally.
+        </p>
+        <a
+          class="btn"
+          href="/policies/Mass_Deportations__Legitimacy__Legality__and_Logistics.pdf"
+          target="_blank"
+          rel="noopener">
+          Read the full paper
+        </a>
+      </div>
+    </article>
+
   </section>
 
   <div class="note">
-    <strong>About this page:</strong> These summaries are provided for navigation only.
-    The full policy papers remain on the official Restore Britain website and are linked above.
+    <strong>About this page:</strong>
+    These policy papers are hosted locally on the Restore Britain
+    Torfaen website for easy access. The summaries above are provided
+    for navigation and do not replace the full documents.
   </div>
+
 </div>
 </main>
 
 <footer>
   <div>Restore Britain Torfaen Local Branch</div>
-  <div style="margin-top:8px"><a href="/contact/">Contact the branch</a></div>
+  <div style="margin-top:8px">
+    <a href="/contact/">Contact the branch</a>
+  </div>
 </footer>
+
 </body>
 </html>
