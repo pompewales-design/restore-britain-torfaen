@@ -2,37 +2,56 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Restore Britain Torfaen | Restore Britain Torfaen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Restore Britain Torfaen | Restore Britain</title>
+
+<meta name="description" content="Restore Britain Torfaen local branch website, branch information, news, policies and local issues.">
 
 <style>
 :root{
-  --navy:#082653;
-  --red:#e31b23;
-  --ink:#304766;
-  --pale:#f5f7fa;
-  --line:#dce3ec;
+  --black:#050505;
+  --black2:#0b0b0b;
+  --navy:#071d3d;
+  --red:#e21b23;
+  --white:#ffffff;
+  --light:#eeeeee;
+  --muted:#b9b9b9;
+  --line:#292929;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
+  background:var(--black);
+  color:var(--white);
   font-family:Arial,Helvetica,sans-serif;
-  color:var(--ink);
-  background:var(--pale);
 }
 
-/* BRANDING HEADER */
+/* TOP RED LINE */
+
+.topline{
+  height:5px;
+  background:var(--red);
+}
+
+/* HEADER */
+
 header{
-  background:#fff;
-  border-top:6px solid var(--red);
-  border-bottom:1px solid #e8edf2;
-  padding:28px 20px 24px;
+  background:#050505;
+  border-bottom:1px solid #222;
+  padding:18px 24px;
 }
 
-.nav{
-  max-width:1100px;
+.header-inner{
+  max-width:1180px;
   margin:auto;
   display:flex;
   align-items:center;
@@ -40,217 +59,531 @@ header{
   gap:25px;
 }
 
-.brand{
+.logo{
   display:block;
-  width:230px;
-  text-decoration:none;
+  width:210px;
 }
 
-.brand img{
+.logo img{
   display:block;
   width:100%;
-  max-width:230px;
   height:auto;
 }
 
-.navlinks{
+/* NAVIGATION */
+
+nav{
   display:flex;
-  flex-wrap:wrap;
+  align-items:center;
   justify-content:flex-end;
+  flex-wrap:wrap;
   gap:4px;
 }
 
-.navlinks a{
-  padding:9px 10px;
+nav a{
+  color:#fff;
   text-decoration:none;
-  font-weight:bold;
-  color:var(--navy);
-  border-radius:5px;
+  font-size:14px;
+  font-weight:700;
+  padding:10px 13px;
+  border-radius:3px;
+  transition:.2s ease;
 }
 
-.navlinks a:hover{
-  background:var(--navy);
+nav a:hover,
+nav a.active{
+  background:var(--red);
   color:#fff;
 }
 
-/* MAIN */
-.wrap{
-  max-width:1000px;
+.members{
+  border:1px solid #555;
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.96) 0%,
+      rgba(0,0,0,.88) 42%,
+      rgba(0,0,0,.45) 72%,
+      rgba(0,0,0,.78) 100%
+    ),
+    url("/rupert-lowe-speaking.jpg") center center / cover no-repeat,
+    #090909;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      0deg,
+      rgba(5,5,5,.95) 0%,
+      transparent 30%,
+      transparent 70%,
+      rgba(5,5,5,.35) 100%
+    );
+  pointer-events:none;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:1180px;
   margin:auto;
-  padding:48px 22px 60px;
+  padding:90px 30px 105px;
+}
+
+.hero-copy{
+  max-width:650px;
 }
 
 .eyebrow{
-  text-align:center;
-  color:var(--red);
-  font-weight:bold;
+  display:inline-block;
+  color:#fff;
+  background:var(--red);
+  font-size:13px;
+  font-weight:800;
   letter-spacing:2px;
-  font-size:14px;
+  padding:8px 13px;
+  margin-bottom:20px;
 }
 
-.title{
-  text-align:center;
-  font:56px Georgia,serif;
-  color:var(--navy);
-  margin:8px 0 18px;
-}
-
-.lead{
-  text-align:center;
-  max-width:720px;
-  margin:0 auto 38px;
-  font-size:19px;
-  line-height:1.6;
-}
-
-/* SMALLER FORM CARD */
-.card{
-  max-width:650px;
-  margin:0 auto;
-  background:#fff;
-  border:1px solid var(--line);
-  border-top:6px solid var(--navy);
-  border-radius:14px;
-  padding:25px 28px 28px;
-  box-shadow:0 4px 18px rgba(8,38,83,.07);
-}
-
-.card h2{
-  color:var(--navy);
-  font-family:Georgia,serif;
-  font-size:27px;
-  margin:0 0 8px;
-}
-
-.card > p{
-  line-height:1.55;
+.hero h1{
   margin:0 0 20px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:68px;
+  line-height:.98;
+  letter-spacing:-1px;
 }
 
-label{
+.hero h1 span{
   display:block;
-  font-weight:bold;
-  color:var(--navy);
-  margin:13px 0 6px;
+  color:var(--red);
 }
 
-input,
-textarea,
-select{
-  width:100%;
-  padding:10px;
-  border:1px solid #cbd4df;
-  border-radius:6px;
-  box-sizing:border-box;
-  font:inherit;
+.hero p{
+  margin:0;
+  max-width:600px;
+  font-size:19px;
+  line-height:1.65;
+  color:#e6e6e6;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:30px;
+}
+
+.hero-button{
+  display:inline-block;
+  padding:13px 22px;
+  text-decoration:none;
+  font-weight:800;
+  border-radius:3px;
+  background:var(--red);
+  color:#fff;
+}
+
+.hero-button.secondary{
+  background:transparent;
+  border:1px solid #aaa;
+}
+
+.hero-button:hover{
+  filter:brightness(.9);
+}
+
+/* RED STRIP */
+
+.red-strip{
+  background:var(--red);
+  padding:15px 20px;
+  text-align:center;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+/* CONTENT */
+
+main{
+  background:var(--black);
+}
+
+.section{
+  max-width:1180px;
+  margin:auto;
+  padding:75px 30px;
+}
+
+.section-heading{
+  max-width:760px;
+  margin-bottom:38px;
+}
+
+.section-heading .small{
+  color:var(--red);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.section-heading h2{
+  margin:8px 0 15px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:43px;
+  line-height:1.05;
+}
+
+.section-heading p{
+  margin:0;
+  color:#c7c7c7;
+  font-size:17px;
+  line-height:1.65;
+}
+
+/* THREE LINKS */
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.feature{
+  display:block;
+  min-height:190px;
+  padding:28px;
+  background:#101010;
+  border:1px solid var(--line);
+  text-decoration:none;
+  color:#fff;
+  position:relative;
+  transition:.2s ease;
+}
+
+.feature:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:5px;
+  background:var(--red);
+}
+
+.feature:hover{
+  transform:translateY(-3px);
+  background:#151515;
+}
+
+.feature h3{
+  margin:0 0 12px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:26px;
+}
+
+.feature p{
+  margin:0;
+  color:#bbb;
+  line-height:1.55;
+}
+
+.arrow{
+  display:inline-block;
+  margin-top:20px;
+  color:var(--red);
+  font-weight:800;
+}
+
+/* LOCAL CONCERN */
+
+.concern-section{
+  background:#0b0b0b;
+  border-top:1px solid #222;
+  border-bottom:1px solid #222;
+}
+
+.concern-inner{
+  max-width:1180px;
+  margin:auto;
+  padding:70px 30px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 420px;
+  gap:60px;
+  align-items:start;
+}
+
+.concern-copy{
+  padding-top:10px;
+}
+
+.concern-copy .small{
+  color:var(--red);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.concern-copy h2{
+  margin:10px 0 18px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:43px;
+  line-height:1.05;
+}
+
+.concern-copy p{
+  color:#c5c5c5;
+  max-width:600px;
+  line-height:1.65;
+  font-size:17px;
+}
+
+.concern-points{
+  margin-top:25px;
+  padding:0;
+  list-style:none;
+}
+
+.concern-points li{
+  border-left:3px solid var(--red);
+  padding:8px 0 8px 14px;
+  margin-bottom:8px;
+  color:#ddd;
+}
+
+/* SMALL FORM */
+
+.form-card{
   background:#fff;
+  color:#172b45;
+  border-radius:5px;
+  padding:25px;
+  box-shadow:0 12px 40px rgba(0,0,0,.4);
 }
 
-textarea{
-  min-height:95px;
+.form-card h3{
+  margin:0 0 7px;
+  color:#071d3d;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:26px;
+}
+
+.form-card .intro{
+  margin:0 0 18px;
+  color:#526176;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.form-row{
+  margin-bottom:12px;
+}
+
+.form-row label{
+  display:block;
+  margin-bottom:5px;
+  font-size:13px;
+  font-weight:800;
+  color:#071d3d;
+}
+
+.form-card input,
+.form-card textarea,
+.form-card select{
+  width:100%;
+  border:1px solid #ccd3dc;
+  border-radius:4px;
+  padding:9px 10px;
+  font:inherit;
+  font-size:14px;
+  background:#fff;
+  color:#172b45;
+}
+
+.form-card textarea{
+  min-height:75px;
   resize:vertical;
 }
 
-input:focus,
-textarea:focus,
-select:focus{
-  outline:2px solid rgba(227,27,35,.2);
-  border-color:var(--red);
-}
-
-.checkbox-label{
-  display:flex;
+.checkbox{
+  display:flex!important;
   align-items:flex-start;
   gap:8px;
-  font-weight:normal;
-  margin-top:15px;
+  font-weight:400!important;
+  line-height:1.4;
 }
 
-.checkbox-label input{
-  width:auto;
+.checkbox input{
+  width:auto!important;
   margin-top:3px;
 }
 
-.btn{
-  display:block;
-  margin:17px 0 0;
+.form-button{
   width:100%;
+  border:0;
   background:var(--red);
   color:#fff;
-  border:0;
-  border-radius:6px;
-  padding:12px 18px;
-  font-weight:bold;
-  font-size:15px;
+  padding:11px 15px;
+  border-radius:4px;
+  font-weight:800;
   cursor:pointer;
 }
 
-.btn:hover{
-  background:#c9141b;
+.form-button:hover{
+  filter:brightness(.9);
 }
 
-.notice{
-  margin-top:20px;
-  padding:13px 15px;
-  background:#eef3f8;
-  border-left:4px solid var(--red);
-  line-height:1.5;
-  font-size:14px;
+.form-note{
+  margin-top:12px;
+  padding:10px;
+  background:#f1f3f6;
+  border-left:3px solid var(--red);
+  font-size:12px;
+  line-height:1.45;
+  color:#58677b;
 }
 
 /* FOOTER */
+
 footer{
-  background:var(--navy);
+  background:#030303;
+  border-top:1px solid #222;
+  padding:40px 25px;
   text-align:center;
-  padding:25px;
+  color:#999;
+}
+
+footer strong{
   color:#fff;
 }
 
+footer a{
+  color:#fff;
+  text-decoration:none;
+}
+
+.footer-links{
+  margin-top:15px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px;
+}
+
+.footer-links a:hover{
+  color:var(--red);
+}
+
 /* MOBILE */
-@media(max-width:760px){
 
-  header{
-    padding:22px 15px;
-  }
+@media(max-width:900px){
 
-  .nav{
+  .header-inner{
     flex-direction:column;
     align-items:center;
-    gap:18px;
   }
 
-  .brand{
-    width:210px;
-  }
-
-  .brand img{
-    max-width:210px;
-  }
-
-  .navlinks{
-    width:100%;
+  nav{
     justify-content:center;
   }
 
-  .navlinks a{
+  .hero{
+    min-height:600px;
+  }
+
+  .hero-inner{
+    padding:75px 25px 85px;
+  }
+
+  .hero h1{
+    font-size:54px;
+  }
+
+  .feature-grid{
+    grid-template-columns:1fr;
+  }
+
+  .concern-inner{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .form-card{
+    max-width:520px;
+  }
+}
+
+@media(max-width:600px){
+
+  header{
+    padding:15px;
+  }
+
+  .logo{
+    width:180px;
+  }
+
+  nav a{
+    font-size:12px;
     padding:8px 9px;
   }
 
-  .wrap{
-    padding:38px 15px 50px;
+  .hero{
+    min-height:590px;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,0,0,.94),
+        rgba(0,0,0,.72)
+      ),
+      url("/rupert-lowe-speaking.jpg") center / cover no-repeat,
+      #090909;
   }
 
-  .title{
-    font-size:42px;
+  .hero-inner{
+    padding:65px 20px 80px;
   }
 
-  .lead{
-    font-size:17px;
-    margin-bottom:30px;
+  .hero h1{
+    font-size:43px;
   }
 
-  .card{
-    padding:22px 20px 24px;
+  .hero p{
+    font-size:16px;
+  }
+
+  .section{
+    padding:55px 20px;
+  }
+
+  .section-heading h2,
+  .concern-copy h2{
+    font-size:35px;
+  }
+
+  .concern-inner{
+    padding:55px 20px;
+  }
+
+  .form-card{
+    padding:20px;
   }
 }
 </style>
@@ -258,99 +591,289 @@ footer{
 
 <body>
 
-<header>
-  <div class="nav">
+<div class="topline"></div>
 
-    <a class="brand" href="/">
+<header>
+  <div class="header-inner">
+
+    <a class="logo" href="/">
       <img src="/logo.png" alt="Restore Britain">
     </a>
 
-    <div class="navlinks">
-      <a href="/">Home</a>
+    <nav aria-label="Main navigation">
+      <a href="/" class="active">Home</a>
       <a href="/about/">About</a>
       <a href="/policies/">Policies</a>
       <a href="/torfaen/">Torfaen</a>
       <a href="/foi/">FOI</a>
       <a href="/news/">News</a>
       <a href="/contact/">Contact</a>
-      <a href="/members/">🔐 Members</a>
-    </div>
+      <a href="/members/" class="members">🔐 Members</a>
+    </nav>
 
   </div>
 </header>
 
-<main class="wrap">
 
-  <div class="eyebrow">TORFAEN LOCAL BRANCH</div>
+<section class="hero">
 
-  <h1 class="title">Restore Britain Torfaen</h1>
+  <div class="hero-inner">
 
-  <p class="lead">
-    Local information, branch updates and a way for everyone in Torfaen
-    to raise issues worth investigating.
-  </p>
+    <div class="hero-copy">
 
-  <div class="card">
+      <div class="eyebrow">TORFAEN LOCAL BRANCH</div>
 
-    <h2>Have a local concern?</h2>
+      <h1>
+        Restore Britain
+        <span>Torfaen</span>
+      </h1>
 
-    <p>
-      Is there something happening in Torfaen that you think deserves
-      looking into? You do not have to be a member to make a suggestion.
-    </p>
+      <p>
+        The local branch for people in Torfaen who want to follow local
+        issues, understand what is happening in their community and
+        contribute ideas for investigation.
+      </p>
 
-    <form action="#" method="post">
+      <div class="hero-buttons">
+        <a class="hero-button" href="/torfaen/">Torfaen Branch</a>
+        <a class="hero-button secondary" href="/policies/">View Policies</a>
+      </div>
 
-      <label>What would you like us to look into?</label>
-      <input required>
-
-      <label>What type of issue is it?</label>
-      <select>
-        <option>Possible FOI</option>
-        <option>Local concern</option>
-        <option>Something to investigate</option>
-        <option>Campaign idea</option>
-        <option>Other</option>
-      </select>
-
-      <label>Could this be an FOI?</label>
-      <select>
-        <option>Yes</option>
-        <option>No</option>
-        <option>Not sure</option>
-      </select>
-
-      <label>Tell us more</label>
-      <textarea required></textarea>
-
-      <label>Name (optional)</label>
-      <input>
-
-      <label>Email (optional)</label>
-      <input type="email">
-
-      <label class="checkbox-label">
-        <input type="checkbox">
-        <span>I'm happy for the branch to contact me.</span>
-      </label>
-
-      <button class="btn" type="submit">
-        Submit suggestion
-      </button>
-
-    </form>
-
-    <div class="notice">
-      Submissions will be reviewed by the Torfaen branch.
-      The email delivery connection will be added separately.
     </div>
 
   </div>
 
+</section>
+
+
+<div class="red-strip">
+  Restore Britain Torfaen — Local information, local issues, local action
+</div>
+
+
+<main>
+
+<section class="section">
+
+  <div class="section-heading">
+    <div class="small">Explore the branch</div>
+
+    <h2>What would you like to explore?</h2>
+
+    <p>
+      Find information about the Torfaen branch, read policy papers,
+      follow local news and raise issues that may deserve further
+      investigation.
+    </p>
+  </div>
+
+
+  <div class="feature-grid">
+
+    <a class="feature" href="/torfaen/">
+      <h3>Torfaen</h3>
+      <p>
+        Local information, branch activity and issues affecting
+        communities across Torfaen.
+      </p>
+      <span class="arrow">Explore Torfaen →</span>
+    </a>
+
+
+    <a class="feature" href="/policies/">
+      <h3>Policy Papers</h3>
+      <p>
+        Browse the collection of Restore Britain policy papers and
+        read the full documents.
+      </p>
+      <span class="arrow">View policies →</span>
+    </a>
+
+
+    <a class="feature" href="/foi/">
+      <h3>FOI</h3>
+      <p>
+        Learn about Freedom of Information requests and how they
+        can help investigate matters of public interest.
+      </p>
+      <span class="arrow">FOI information →</span>
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="concern-section">
+
+  <div class="concern-inner">
+
+    <div class="concern-copy">
+
+      <div class="small">Have your say</div>
+
+      <h2>Something happening in Torfaen?</h2>
+
+      <p>
+        If you have noticed something locally that you think deserves
+        looking into, you can send the branch a suggestion.
+      </p>
+
+      <ul class="concern-points">
+        <li>Possible Freedom of Information request</li>
+        <li>Local issue or concern</li>
+        <li>Something that may need investigating</li>
+        <li>Potential campaign idea</li>
+      </ul>
+
+    </div>
+
+
+    <div class="form-card">
+
+      <h3>Local concern</h3>
+
+      <p class="intro">
+        You do not have to be a member to make a suggestion.
+      </p>
+
+      <form action="#" method="post">
+
+        <div class="form-row">
+          <label for="issue">
+            What would you like us to look into?
+          </label>
+
+          <input
+            id="issue"
+            name="issue"
+            type="text"
+            required
+          >
+        </div>
+
+
+        <div class="form-row">
+          <label for="type">
+            Type of issue
+          </label>
+
+          <select id="type" name="type">
+            <option>Possible FOI</option>
+            <option>Local concern</option>
+            <option>Something to investigate</option>
+            <option>Campaign idea</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+
+        <div class="form-row">
+          <label for="foi">
+            Could this be an FOI?
+          </label>
+
+          <select id="foi" name="foi">
+            <option>Yes</option>
+            <option>No</option>
+            <option>Not sure</option>
+          </select>
+        </div>
+
+
+        <div class="form-row">
+          <label for="details">
+            Tell us more
+          </label>
+
+          <textarea
+            id="details"
+            name="details"
+            required
+          ></textarea>
+        </div>
+
+
+        <div class="form-row">
+          <label for="name">
+            Name <span style="font-weight:400">(optional)</span>
+          </label>
+
+          <input
+            id="name"
+            name="name"
+            type="text"
+          >
+        </div>
+
+
+        <div class="form-row">
+          <label for="email">
+            Email <span style="font-weight:400">(optional)</span>
+          </label>
+
+          <input
+            id="email"
+            name="email"
+            type="email"
+          >
+        </div>
+
+
+        <div class="form-row">
+
+          <label class="checkbox">
+
+            <input
+              type="checkbox"
+              name="contact_ok"
+            >
+
+            <span>
+              I'm happy for the branch to contact me.
+            </span>
+
+          </label>
+
+        </div>
+
+
+        <button class="form-button" type="submit">
+          Submit suggestion
+        </button>
+
+
+        <div class="form-note">
+          Submissions will be reviewed by the Torfaen branch.
+          Email delivery will be connected separately.
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
 </main>
 
+
 <footer>
-  Restore Britain Torfaen
+
+  <div>
+    <strong>Restore Britain Torfaen Local Branch</strong>
+  </div>
+
+  <div class="footer-links">
+    <a href="/about/">About</a>
+    <a href="/policies/">Policies</a>
+    <a href="/news/">News</a>
+    <a href="/foi/">FOI</a>
+    <a href="/contact/">Contact</a>
+    <a href="/members/">Members</a>
+  </div>
+
 </footer>
 
 </body>
