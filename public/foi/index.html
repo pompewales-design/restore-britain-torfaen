@@ -1,1 +1,615 @@
-<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Foi | Restore Britain Torfaen</title><style>body{margin:0;font-family:Arial,sans-serif;color:#304766;background:#f5f7fa}header{background:white;border-top:5px solid #e31b23;padding:20px}.nav{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{font:bold 25px Georgia;color:#082653;text-decoration:none;line-height:.9}.navlinks{display:flex;flex-wrap:wrap;gap:5px}.navlinks a{padding:9px;text-decoration:none;font-weight:bold;color:#082653}.wrap{max-width:1000px;margin:auto;padding:50px 22px}.eyebrow{text-align:center;color:#e31b23;font-weight:bold;letter-spacing:2px}.title{text-align:center;font:56px Georgia;color:#082653;margin:10px 0 20px}.lead{text-align:center;max-width:760px;margin:auto auto 35px;font-size:19px;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}.tile{background:white;border:1px solid #dce3ec;border-radius:14px;padding:22px;text-decoration:none;color:#304766}.tile h2{color:#082653;font-family:Georgia;margin:0 0 8px}.card{background:white;border:1px solid #dce3ec;border-radius:18px;padding:28px}.notice{padding:16px;background:#eef3f8;border-left:4px solid #e31b23;line-height:1.5}label{display:block;font-weight:bold;color:#082653;margin:16px 0 7px}input,textarea,select{width:100%;padding:11px;border:1px solid #cbd4df;border-radius:7px;box-sizing:border-box;font:inherit}textarea{min-height:120px}.btn{margin-top:18px;background:#082653;color:white;border:0;border-radius:7px;padding:12px 18px;font-weight:bold}footer{text-align:center;padding:25px;color:#718198}@media(max-width:760px){.nav{align-items:flex-start;flex-direction:column}.navlinks{width:100%}.title{font-size:42px}}</style></head><body><header><div class="nav"><a class="brand" href="/">RESTORE<br>BRITAIN</a><div class="navlinks"><a href="/">Home</a><a href="/about/">About</a><a href="/policies/">Policies</a><a href="/torfaen/">Torfaen</a><a href="/foi/">FOI</a><a href="/news/">News</a><a href="/contact/">Contact</a><a href="/members/">🔐 Members</a></div></div></header><main class="wrap"><div class="eyebrow">TORFAEN LOCAL BRANCH</div><h1 class="title">Foi</h1><p class="lead">This page is ready for branch content to be added.</p><div class="card">Content can be added here.</div></main><footer>Restore Britain Torfaen</footer></body></html>
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>FOI | Restore Britain Torfaen</title>
+
+<meta name="description" content="Freedom of Information and research by the Restore Britain Torfaen local branch.">
+
+<style>
+:root{
+  --black:#050505;
+  --dark:#111111;
+  --red:#ed1c24;
+  --white:#ffffff;
+  --text:#dddddd;
+  --muted:#aeb4bd;
+  --line:#292929;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:var(--black);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.6;
+}
+
+.topline{
+  height:5px;
+  background:var(--red);
+}
+
+/* HEADER */
+
+header{
+  background:#050505;
+  border-bottom:1px solid #222;
+  padding:28px 20px 24px;
+}
+
+.header-inner{
+  max-width:1180px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.logo{
+  display:block;
+  width:210px;
+}
+
+.logo img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+/* NAVIGATION */
+
+nav{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:4px;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700;
+  padding:9px 13px;
+  border-radius:4px;
+}
+
+nav a:hover,
+nav a.active{
+  background:var(--red);
+  color:#fff;
+}
+
+.members{
+  border:1px solid #555;
+}
+
+/* MAIN */
+
+main{
+  background:var(--black);
+  padding:70px 20px 80px;
+}
+
+.wrap{
+  max-width:1050px;
+  margin:auto;
+}
+
+/* INTRO */
+
+.kicker{
+  text-align:center;
+  color:var(--red);
+  font-size:13px;
+  letter-spacing:2.5px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+h1{
+  margin:8px 0 18px;
+  text-align:center;
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:54px;
+  line-height:1.1;
+}
+
+.lead{
+  max-width:800px;
+  margin:0 auto 50px;
+  text-align:center;
+  color:#cfd3d8;
+  font-size:19px;
+  line-height:1.7;
+}
+
+/* FEATURE GRID */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+
+/* CARDS */
+
+.card{
+  background:var(--dark);
+  border:1px solid var(--line);
+  border-top:5px solid var(--red);
+  padding:30px;
+}
+
+.card h2{
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:30px;
+  line-height:1.2;
+  margin:0 0 15px;
+}
+
+.card p{
+  color:#ccc;
+  margin:0 0 18px;
+}
+
+.card ul{
+  margin:0;
+  padding-left:20px;
+  color:#ccc;
+}
+
+.card li{
+  margin:8px 0;
+}
+
+.card li::marker{
+  color:var(--red);
+}
+
+/* PROCESS */
+
+.process{
+  margin-top:24px;
+  background:#0d0d0d;
+  border:1px solid var(--line);
+  padding:30px;
+}
+
+.process h2{
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:31px;
+  margin:0 0 20px;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.step{
+  border-top:3px solid var(--red);
+  padding-top:15px;
+}
+
+.number{
+  color:var(--red);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.step h3{
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:22px;
+  margin:7px 0;
+}
+
+.step p{
+  color:#aaa;
+  margin:0;
+}
+
+/* NOTICE */
+
+.notice{
+  margin-top:24px;
+  background:#111;
+  border-left:4px solid var(--red);
+  padding:20px 24px;
+  color:#bbb;
+}
+
+.notice strong{
+  color:#fff;
+}
+
+/* LINKS */
+
+.link-card{
+  margin-top:24px;
+  background:var(--dark);
+  border:1px solid var(--line);
+  padding:25px;
+}
+
+.link-card h2{
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:28px;
+  margin:0 0 10px;
+}
+
+.link-card p{
+  color:#bbb;
+  margin:0 0 18px;
+}
+
+.btn{
+  display:inline-block;
+  background:var(--red);
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  padding:11px 18px;
+  border-radius:2px;
+}
+
+.btn:hover{
+  background:#ff2931;
+}
+
+/* RED STRIP */
+
+.red-strip{
+  background:var(--red);
+  color:#fff;
+  text-align:center;
+  padding:15px 20px;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+/* FOOTER */
+
+footer{
+  background:#050505;
+  border-top:1px solid #222;
+  color:#888;
+  text-align:center;
+  padding:30px 20px;
+}
+
+footer a{
+  color:#fff;
+  text-decoration:none;
+}
+
+footer a:hover{
+  color:var(--red);
+}
+
+/* TABLET */
+
+@media(max-width:850px){
+
+  .header-inner{
+    flex-direction:column;
+  }
+
+  nav{
+    justify-content:center;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+}
+
+/* MOBILE */
+
+@media(max-width:620px){
+
+  header{
+    padding:24px 15px 20px;
+  }
+
+  .logo{
+    width:180px;
+  }
+
+  nav a{
+    font-size:13px;
+    padding:8px 10px;
+  }
+
+  main{
+    padding:48px 15px 60px;
+  }
+
+  h1{
+    font-size:42px;
+  }
+
+  .lead{
+    font-size:16px;
+  }
+
+  .card,
+  .process,
+  .link-card{
+    padding:22px;
+  }
+
+  .card h2,
+  .process h2{
+    font-size:27px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="topline"></div>
+
+<header>
+
+  <div class="header-inner">
+
+    <a class="logo" href="/">
+      <img src="/logo.png" alt="Restore Britain">
+    </a>
+
+    <nav aria-label="Main navigation">
+
+      <a href="/">Home</a>
+
+      <a href="/about/">About</a>
+
+      <a href="/policies/">Policies</a>
+
+      <a href="/torfaen/">Torfaen</a>
+
+      <a href="/foi/" class="active">
+        FOI
+      </a>
+
+      <a href="/news/">News</a>
+
+      <a href="/contact/">Contact</a>
+
+      <a href="/members/" class="members">
+        🔐 Members
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+<div class="wrap">
+
+  <div class="kicker">
+    Restore Britain Torfaen
+  </div>
+
+  <h1>
+    Freedom of Information
+  </h1>
+
+  <p class="lead">
+    Using Freedom of Information requests to obtain information
+    from public authorities and help investigate matters of
+    public interest in Torfaen.
+  </p>
+
+
+  <section class="grid">
+
+    <article class="card">
+
+      <h2>
+        What is FOI?
+      </h2>
+
+      <p>
+        Freedom of Information provides a way for people to
+        request recorded information held by public authorities.
+      </p>
+
+      <p>
+        FOI requests can be useful when trying to understand
+        how decisions are made, how public money is spent and
+        what information public bodies hold.
+      </p>
+
+    </article>
+
+
+    <article class="card">
+
+      <h2>
+        Local research
+      </h2>
+
+      <p>
+        The Torfaen branch can use publicly available information
+        and FOI requests as part of research into matters affecting
+        local communities.
+      </p>
+
+      <ul>
+
+        <li>
+          Council spending and procurement
+        </li>
+
+        <li>
+          Local services and performance
+        </li>
+
+        <li>
+          Decisions and policies
+        </li>
+
+        <li>
+          Publicly funded projects
+        </li>
+
+      </ul>
+
+    </article>
+
+  </section>
+
+
+  <section class="process">
+
+    <h2>
+      How an FOI request works
+    </h2>
+
+    <div class="steps">
+
+      <div class="step">
+
+        <div class="number">
+          Step 1
+        </div>
+
+        <h3>
+          Identify the information
+        </h3>
+
+        <p>
+          Establish exactly what information you are looking
+          for and which public authority may hold it.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="number">
+          Step 2
+        </div>
+
+        <h3>
+          Make the request
+        </h3>
+
+        <p>
+          Submit a clear request to the relevant public authority
+          asking for recorded information.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="number">
+          Step 3
+        </div>
+
+        <h3>
+          Examine the response
+        </h3>
+
+        <p>
+          Consider the information provided and whether it answers
+          the original question.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <div class="notice">
+
+    <strong>Important:</strong>
+    Freedom of Information requests need to be specific about
+    the recorded information being requested. Not every question
+    will necessarily be an FOI request.
+
+  </div>
+
+
+  <section class="link-card">
+
+    <h2>
+      Have something worth investigating?
+    </h2>
+
+    <p>
+      If you have identified a local issue or think there may be
+      information that should be obtained, you can tell the
+      Torfaen branch about it.
+    </p>
+
+    <a class="btn" href="/">
+      Raise a local issue
+    </a>
+
+  </section>
+
+</div>
+
+</main>
+
+
+<div class="red-strip">
+  Restore Britain Torfaen — Local information, local issues, local action
+</div>
+
+
+<footer>
+
+  <div>
+    Restore Britain Torfaen Local Branch
+  </div>
+
+  <div style="margin-top:8px">
+
+    <a href="/contact/">
+      Contact the branch
+    </a>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
