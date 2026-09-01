@@ -1,1 +1,357 @@
-<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Restore Britain Torfaen | Restore Britain Torfaen</title><style>body{margin:0;font-family:Arial,sans-serif;color:#304766;background:#f5f7fa}header{background:white;border-top:5px solid #e31b23;padding:20px}.nav{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{font:bold 25px Georgia;color:#082653;text-decoration:none;line-height:.9}.navlinks{display:flex;flex-wrap:wrap;gap:5px}.navlinks a{padding:9px;text-decoration:none;font-weight:bold;color:#082653}.wrap{max-width:1000px;margin:auto;padding:50px 22px}.eyebrow{text-align:center;color:#e31b23;font-weight:bold;letter-spacing:2px}.title{text-align:center;font:56px Georgia;color:#082653;margin:10px 0 20px}.lead{text-align:center;max-width:760px;margin:auto auto 35px;font-size:19px;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}.tile{background:white;border:1px solid #dce3ec;border-radius:14px;padding:22px;text-decoration:none;color:#304766}.tile h2{color:#082653;font-family:Georgia;margin:0 0 8px}.card{background:white;border:1px solid #dce3ec;border-radius:18px;padding:28px}.notice{padding:16px;background:#eef3f8;border-left:4px solid #e31b23;line-height:1.5}label{display:block;font-weight:bold;color:#082653;margin:16px 0 7px}input,textarea,select{width:100%;padding:11px;border:1px solid #cbd4df;border-radius:7px;box-sizing:border-box;font:inherit}textarea{min-height:120px}.btn{margin-top:18px;background:#082653;color:white;border:0;border-radius:7px;padding:12px 18px;font-weight:bold}footer{text-align:center;padding:25px;color:#718198}@media(max-width:760px){.nav{align-items:flex-start;flex-direction:column}.navlinks{width:100%}.title{font-size:42px}}</style></head><body><header><div class="nav"><a class="brand" href="/">RESTORE<br>BRITAIN</a><div class="navlinks"><a href="/">Home</a><a href="/about/">About</a><a href="/policies/">Policies</a><a href="/torfaen/">Torfaen</a><a href="/foi/">FOI</a><a href="/news/">News</a><a href="/contact/">Contact</a><a href="/members/">🔐 Members</a></div></div></header><main class="wrap"><div class="eyebrow">TORFAEN LOCAL BRANCH</div><h1 class="title">Restore Britain Torfaen</h1><p class="lead">Local information, branch updates and a way for everyone in Torfaen to raise issues worth investigating.</p><div class="card"><h2>Have a local concern?</h2><p>Is there something happening in Torfaen that you think deserves looking into? You do not have to be a member to make a suggestion.</p><form action="#" method="post"><label>What would you like us to look into?</label><input required><label>What type of issue is it?</label><select><option>Possible FOI</option><option>Local concern</option><option>Something to investigate</option><option>Campaign idea</option><option>Other</option></select><label>Could this be an FOI?</label><select><option>Yes</option><option>No</option><option>Not sure</option></select><label>Tell us more</label><textarea required></textarea><label>Name (optional)</label><input><label>Email (optional)</label><input type="email"><label><input type="checkbox" style="width:auto"> I'm happy for the branch to contact me.</label><button class="btn">Submit suggestion</button></form><div class="notice">Submissions will be reviewed by the Torfaen branch. The email delivery connection will be added separately.</div></div></main><footer>Restore Britain Torfaen</footer></body></html>
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Restore Britain Torfaen | Restore Britain Torfaen</title>
+
+<style>
+:root{
+  --navy:#082653;
+  --red:#e31b23;
+  --ink:#304766;
+  --pale:#f5f7fa;
+  --line:#dce3ec;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+  background:var(--pale);
+}
+
+/* BRANDING HEADER */
+header{
+  background:#fff;
+  border-top:6px solid var(--red);
+  border-bottom:1px solid #e8edf2;
+  padding:28px 20px 24px;
+}
+
+.nav{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.brand{
+  display:block;
+  width:230px;
+  text-decoration:none;
+}
+
+.brand img{
+  display:block;
+  width:100%;
+  max-width:230px;
+  height:auto;
+}
+
+.navlinks{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:4px;
+}
+
+.navlinks a{
+  padding:9px 10px;
+  text-decoration:none;
+  font-weight:bold;
+  color:var(--navy);
+  border-radius:5px;
+}
+
+.navlinks a:hover{
+  background:var(--navy);
+  color:#fff;
+}
+
+/* MAIN */
+.wrap{
+  max-width:1000px;
+  margin:auto;
+  padding:48px 22px 60px;
+}
+
+.eyebrow{
+  text-align:center;
+  color:var(--red);
+  font-weight:bold;
+  letter-spacing:2px;
+  font-size:14px;
+}
+
+.title{
+  text-align:center;
+  font:56px Georgia,serif;
+  color:var(--navy);
+  margin:8px 0 18px;
+}
+
+.lead{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 38px;
+  font-size:19px;
+  line-height:1.6;
+}
+
+/* SMALLER FORM CARD */
+.card{
+  max-width:650px;
+  margin:0 auto;
+  background:#fff;
+  border:1px solid var(--line);
+  border-top:6px solid var(--navy);
+  border-radius:14px;
+  padding:25px 28px 28px;
+  box-shadow:0 4px 18px rgba(8,38,83,.07);
+}
+
+.card h2{
+  color:var(--navy);
+  font-family:Georgia,serif;
+  font-size:27px;
+  margin:0 0 8px;
+}
+
+.card > p{
+  line-height:1.55;
+  margin:0 0 20px;
+}
+
+label{
+  display:block;
+  font-weight:bold;
+  color:var(--navy);
+  margin:13px 0 6px;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  padding:10px;
+  border:1px solid #cbd4df;
+  border-radius:6px;
+  box-sizing:border-box;
+  font:inherit;
+  background:#fff;
+}
+
+textarea{
+  min-height:95px;
+  resize:vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  outline:2px solid rgba(227,27,35,.2);
+  border-color:var(--red);
+}
+
+.checkbox-label{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  font-weight:normal;
+  margin-top:15px;
+}
+
+.checkbox-label input{
+  width:auto;
+  margin-top:3px;
+}
+
+.btn{
+  display:block;
+  margin:17px 0 0;
+  width:100%;
+  background:var(--red);
+  color:#fff;
+  border:0;
+  border-radius:6px;
+  padding:12px 18px;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.btn:hover{
+  background:#c9141b;
+}
+
+.notice{
+  margin-top:20px;
+  padding:13px 15px;
+  background:#eef3f8;
+  border-left:4px solid var(--red);
+  line-height:1.5;
+  font-size:14px;
+}
+
+/* FOOTER */
+footer{
+  background:var(--navy);
+  text-align:center;
+  padding:25px;
+  color:#fff;
+}
+
+/* MOBILE */
+@media(max-width:760px){
+
+  header{
+    padding:22px 15px;
+  }
+
+  .nav{
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+  }
+
+  .brand{
+    width:210px;
+  }
+
+  .brand img{
+    max-width:210px;
+  }
+
+  .navlinks{
+    width:100%;
+    justify-content:center;
+  }
+
+  .navlinks a{
+    padding:8px 9px;
+  }
+
+  .wrap{
+    padding:38px 15px 50px;
+  }
+
+  .title{
+    font-size:42px;
+  }
+
+  .lead{
+    font-size:17px;
+    margin-bottom:30px;
+  }
+
+  .card{
+    padding:22px 20px 24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <a class="brand" href="/">
+      <img src="/logo.png" alt="Restore Britain">
+    </a>
+
+    <div class="navlinks">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/policies/">Policies</a>
+      <a href="/torfaen/">Torfaen</a>
+      <a href="/foi/">FOI</a>
+      <a href="/news/">News</a>
+      <a href="/contact/">Contact</a>
+      <a href="/members/">🔐 Members</a>
+    </div>
+
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="eyebrow">TORFAEN LOCAL BRANCH</div>
+
+  <h1 class="title">Restore Britain Torfaen</h1>
+
+  <p class="lead">
+    Local information, branch updates and a way for everyone in Torfaen
+    to raise issues worth investigating.
+  </p>
+
+  <div class="card">
+
+    <h2>Have a local concern?</h2>
+
+    <p>
+      Is there something happening in Torfaen that you think deserves
+      looking into? You do not have to be a member to make a suggestion.
+    </p>
+
+    <form action="#" method="post">
+
+      <label>What would you like us to look into?</label>
+      <input required>
+
+      <label>What type of issue is it?</label>
+      <select>
+        <option>Possible FOI</option>
+        <option>Local concern</option>
+        <option>Something to investigate</option>
+        <option>Campaign idea</option>
+        <option>Other</option>
+      </select>
+
+      <label>Could this be an FOI?</label>
+      <select>
+        <option>Yes</option>
+        <option>No</option>
+        <option>Not sure</option>
+      </select>
+
+      <label>Tell us more</label>
+      <textarea required></textarea>
+
+      <label>Name (optional)</label>
+      <input>
+
+      <label>Email (optional)</label>
+      <input type="email">
+
+      <label class="checkbox-label">
+        <input type="checkbox">
+        <span>I'm happy for the branch to contact me.</span>
+      </label>
+
+      <button class="btn" type="submit">
+        Submit suggestion
+      </button>
+
+    </form>
+
+    <div class="notice">
+      Submissions will be reviewed by the Torfaen branch.
+      The email delivery connection will be added separately.
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  Restore Britain Torfaen
+</footer>
+
+</body>
+</html>
