@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Members Calendar | Restore Britain Torfaen</title>
+<style>
+:root{--red:#ed1c24;--bg:#090909;--card:#151515;--line:#303030;--muted:#aaa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#eee;font-family:Arial,Helvetica,sans-serif}
+a{color:inherit}
+.wrap{width:min(1180px,calc(100% - 32px));margin:0 auto}
+header{border-bottom:1px solid #292929;padding:18px 0}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand img{width:58px;height:auto}
+.brand strong{font-family:Georgia,serif;font-size:1.35rem}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+nav a{padding:8px 11px;text-decoration:none;color:#ccc;border-radius:6px}
+nav a:hover,nav a.active{background:var(--red);color:#fff}
+main{padding:34px 0 60px}
+h1,h2{font-family:Georgia,serif;margin-top:0}
+h1{font-size:clamp(2rem,5vw,3rem);margin-bottom:8px}
+.intro{color:var(--muted);margin-bottom:26px}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+.month-title{font-family:Georgia,serif;font-size:1.7rem}
+button{border:0;border-radius:6px;background:var(--red);color:#fff;padding:10px 15px;font-weight:700;cursor:pointer}
+button.secondary{background:#252525}
+button.danger{background:#8d1116}
+button:disabled{opacity:.5;cursor:not-allowed}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid var(--line);background:var(--line);gap:1px}
+.weekday{background:#111;padding:10px;font-weight:700;text-align:center;color:#bbb}
+.day{min-height:125px;background:var(--card);padding:8px;position:relative}
+.day.muted{background:#0d0d0d;color:#555}
+.day.today{outline:2px solid var(--red);outline-offset:-2px}
+.day-number{font-weight:700;margin-bottom:7px}
+.event{display:block;width:100%;text-align:left;background:#242424;border-left:4px solid var(--red);padding:7px;margin:5px 0;border-radius:3px;color:#fff;font-size:.88rem}
+.event:hover{background:#333}
+.event-time{color:#ccc;font-size:.78rem}
+.editor{display:none;margin:24px 0;padding:22px;background:var(--card);border:1px solid var(--line);border-top:4px solid var(--red);border-radius:8px}
+.editor.open{display:block}
+.form-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-weight:700;color:#ddd}
+input,select,textarea{font:inherit;background:#202020;color:#fff;border:1px solid #444;border-radius:5px;padding:10px}
+textarea{min-height:110px;resize:vertical}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.status{min-height:24px;margin-top:10px;color:#aaa}
+.status.error{color:#ff7075}
+.status.ok{color:#8fd18f}
+@media(max-width:760px){
+ .wrap{width:min(100% - 20px,1180px)}
+ .calendar{grid-template-columns:repeat(7,minmax(0,1fr))}
+ .weekday{font-size:.72rem;padding:7px 2px}
+ .day{min-height:90px;padding:5px}
+ .day-number{font-size:.85rem}
+ .event{font-size:.72rem;padding:5px 4px}
+ .event-time{font-size:.68rem}
+ .form-grid{grid-template-columns:1fr}
+ .toolbar{align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<a class="brand" href="/members/">
+<img src="/logo.png" alt="Restore Britain">
+<strong>Restore Britain Torfaen — Members</strong>
+</a>
+<nav>
+<a href="/members/">Members Home</a>
+<a href="/members/calendar/" class="active">Calendar</a>
+<a href="/">Public Site</a>
+</nav>
+</div>
+</header>
+
+<main class="wrap">
+<h1>Members Calendar</h1>
+<p class="intro">Add and manage branch meetings, campaign activities and other member events.</p>
+
+<div class="toolbar">
+<div class="month-title" id="monthTitle"></div>
+<div class="actions" style="margin:0">
+<button class="secondary" id="prevBtn" type="button">← Previous</button>
+<button class="secondary" id="todayBtn" type="button">Today</button>
+<button class="secondary" id="nextBtn" type="button">Next →</button>
+<button id="addBtn" type="button">+ Add Event</button>
+</div>
+</div>
+
+<section class="editor" id="editor">
+<h2 id="editorTitle">Add Event</h2>
+<form id="eventForm">
+<div class="form-grid">
+<div class="field">
+<label for="title">Title</label>
+<input id="title" name="title" maxlength="120" required>
+</div>
+<div class="field">
+<label for="event_date">Date</label>
+<input id="event_date" name="event_date" type="date" required>
+</div>
+<div class="field">
+<label for="category">Category</label>
+<select id="category" name="category">
+<option>Meeting</option>
+<option>Campaign</option>
+<option>Branch Activity</option>
+<option>Other</option>
+</select>
+</div>
+<div class="field">
+<label for="start_time">Start time</label>
+<input id="start_time" name="start_time" type="time">
+</div>
+<div class="field">
+<label for="end_time">End time</label>
+<input id="end_time" name="end_time" type="time">
+</div>
+<div class="field">
+<label for="location">Location</label>
+<input id="location" name="location" maxlength="200">
+</div>
+<div class="field full">
+<label for="description">Description</label>
+<textarea id="description" name="description" maxlength="4000"></textarea>
+</div>
+</div>
+<div class="actions">
+<button type="submit" id="saveBtn">Save Event</button>
+<button type="button" class="secondary" id="cancelBtn">Cancel</button>
+<button type="button" class="danger" id="deleteBtn" style="display:none">Delete Event</button>
+</div>
+<div class="status" id="status" aria-live="polite"></div>
+</form>
+</section>
+
+<div class="calendar" id="calendar" aria-label="Members calendar"></div>
+</main>
+
+<script>
+const API = "/members/api/calendar";
+const calendar = document.getElementById("calendar");
+const monthTitle = document.getElementById("monthTitle");
+const editor = document.getElementById("editor");
+const form = document.getElementById("eventForm");
+const statusBox = document.getElementById("status");
+const deleteBtn = document.getElementById("deleteBtn");
+const saveBtn = document.getElementById("saveBtn");
+let current = new Date();
+current = new Date(current.getFullYear(), current.getMonth(), 1);
+let events = [];
+let editingId = null;
+
+const pad = n => String(n).padStart(2,"0");
+const monthKey = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}`;
+const dateKey = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+
+function escapeHtml(value){
+  return String(value ?? "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[c]));
+}
+
+function formatTime(e){
+  if(e.start_time && e.end_time) return `${e.start_time}–${e.end_time}`;
+  return e.start_time || e.end_time || "";
+}
+
+function openEditor(event=null, date=null){
+  editingId = event ? event.id : null;
+  editor.classList.add("open");
+  document.getElementById("editorTitle").textContent = event ? "Edit Event" : "Add Event";
+  deleteBtn.style.display = event ? "inline-block" : "none";
+  saveBtn.textContent = event ? "Save Changes" : "Save Event";
+  statusBox.textContent = "";
+  statusBox.className = "status";
+  form.title.value = event?.title || "";
+  form.event_date.value = event?.event_date || date || dateKey(new Date());
+  form.start_time.value = event?.start_time || "";
+  form.end_time.value = event?.end_time || "";
+  form.location.value = event?.location || "";
+  form.description.value = event?.description || "";
+  form.category.value = event?.category || "Other";
+  editor.scrollIntoView({behavior:"smooth",block:"start"});
+  form.title.focus();
+}
+
+function closeEditor(){
+  editingId = null;
+  editor.classList.remove("open");
+  form.reset();
+  statusBox.textContent = "";
+  statusBox.className = "status";
+  deleteBtn.style.display = "none";
+}
+
+function render(){
+  monthTitle.textContent = current.toLocaleDateString("en-GB",{month:"long",year:"numeric"});
+  calendar.innerHTML = "";
+  ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].forEach(d => {
+    const el = document.createElement("div");
+    el.className = "weekday";
+    el.textContent = d;
+    calendar.appendChild(el);
+  });
+
+  const first = new Date(current.getFullYear(),current.getMonth(),1);
+  const offset = (first.getDay()+6)%7;
+  const days = new Date(current.getFullYear(),current.getMonth()+1,0).getDate();
+  const prevDays = new Date(current.getFullYear(),current.getMonth(),0).getDate();
+  const today = dateKey(new Date());
+
+  for(let i=0;i<42;i++){
+    let dayNum = i-offset+1;
+    let cellDate;
+    let muted = false;
+
+    if(dayNum < 1){
+      cellDate = new Date(current.getFullYear(),current.getMonth()-1,prevDays+dayNum);
+      muted = true;
+    }else if(dayNum > days){
+      cellDate = new Date(current.getFullYear(),current.getMonth()+1,dayNum-days);
+      muted = true;
+    }else{
+      cellDate = new Date(current.getFullYear(),current.getMonth(),dayNum);
+    }
+
+    const key = dateKey(cellDate);
+    const cell = document.createElement("div");
+    cell.className = "day" + (muted ? " muted" : "") + (key===today ? " today" : "");
+    cell.innerHTML = `<div class="day-number">${cellDate.getDate()}</div>`;
+
+    events.filter(e=>e.event_date===key).forEach(e=>{
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "event";
+      button.innerHTML = `<div>${escapeHtml(e.title)}</div>
+        <div class="event-time">${escapeHtml(formatTime(e))}${e.location ? " · "+escapeHtml(e.location) : ""}</div>`;
+      button.addEventListener("click",ev=>{
+        ev.stopPropagation();
+        openEditor(e);
+      });
+      cell.appendChild(button);
+    });
+
+    if(!muted){
+      cell.addEventListener("click",()=>openEditor(null,key));
+    }
+    calendar.appendChild(cell);
+  }
+}
+
+async function load(){
+  statusBox.textContent = "Loading calendar…";
+  statusBox.className = "status";
+  try{
+    const res = await fetch(`${API}?month=${encodeURIComponent(monthKey(current))}`,{
+      credentials:"same-origin",
+      cache:"no-store"
+    });
+    const data = await res.json();
+    if(!res.ok) throw new Error(data.error || "Unable to load calendar.");
+    events = data.events || [];
+    render();
+    statusBox.textContent = "";
+  }catch(err){
+    statusBox.textContent = err.message;
+    statusBox.className = "status error";
+  }
+}
+
+form.addEventListener("submit",async ev=>{
+  ev.preventDefault();
+  statusBox.textContent = "Saving…";
+  statusBox.className = "status";
+  const payload = Object.fromEntries(new FormData(form).entries());
+
+  try{
+    const res = await fetch(editingId ? `${API}/${editingId}` : API,{
+      method: editingId ? "PUT" : "POST",
+      credentials:"same-origin",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if(!res.ok) throw new Error(data.error || "Unable to save event.");
+    closeEditor();
+    await load();
+  }catch(err){
+    statusBox.textContent = err.message;
+    statusBox.className = "status error";
+  }
+});
+
+deleteBtn.addEventListener("click",async()=>{
+  if(!editingId) return;
+  if(!confirm("Delete this calendar event?")) return;
+
+  statusBox.textContent = "Deleting…";
+  try{
+    const res = await fetch(`${API}/${editingId}`,{
+      method:"DELETE",
+      credentials:"same-origin"
+    });
+    const data = await res.json();
+    if(!res.ok) throw new Error(data.error || "Unable to delete event.");
+    closeEditor();
+    await load();
+  }catch(err){
+    statusBox.textContent = err.message;
+    statusBox.className = "status error";
+  }
+});
+
+document.getElementById("cancelBtn").addEventListener("click",closeEditor);
+document.getElementById("addBtn").addEventListener("click",()=>openEditor());
+document.getElementById("prevBtn").addEventListener("click",()=>{
+  current = new Date(current.getFullYear(),current.getMonth()-1,1);
+  closeEditor(); load();
+});
+document.getElementById("nextBtn").addEventListener("click",()=>{
+  current = new Date(current.getFullYear(),current.getMonth()+1,1);
+  closeEditor(); load();
+});
+document.getElementById("todayBtn").addEventListener("click",()=>{
+  const now = new Date();
+  current = new Date(now.getFullYear(),now.getMonth(),1);
+  closeEditor(); load();
+});
+
+render();
+load();
+</script>
+</body>
+</html>
