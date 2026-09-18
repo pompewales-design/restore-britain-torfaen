@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raise a Local Issue | Restore Britain Torfaen</title>
+<meta name="description" content="Raise a local issue or suggestion for the Restore Britain Torfaen branch.">
+<style>
+:root{
+  --black:#050505;
+  --black2:#0b0b0b;
+  --navy:#071d3d;
+  --red:#e21b23;
+  --white:#ffffff;
+  --line:#292929;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--black);
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.6;
+}
+.topline{height:5px;background:var(--red)}
+header{
+  background:#050505;
+  border-bottom:1px solid #222;
+  padding:18px 24px;
+}
+.header-inner{
+  max-width:1180px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+.logo{display:block;width:210px}
+.logo img{display:block;width:100%;height:auto}
+nav{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:4px;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700;
+  padding:10px 13px;
+  border-radius:3px;
+}
+nav a:hover,nav a.active{background:var(--red)}
+.members{border:1px solid #555}
+main{
+  max-width:900px;
+  margin:auto;
+  padding:70px 30px 85px;
+}
+.eyebrow{
+  display:inline-block;
+  color:#fff;
+  background:var(--red);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:2px;
+  padding:8px 13px;
+  margin-bottom:18px;
+}
+h1{
+  margin:0 0 18px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:52px;
+  line-height:1.05;
+}
+.lead{
+  color:#c9c9c9;
+  font-size:18px;
+  max-width:720px;
+  margin-bottom:35px;
+}
+.form-card{
+  background:#fff;
+  color:#172b45;
+  border-radius:5px;
+  padding:32px;
+  box-shadow:0 12px 40px rgba(0,0,0,.4);
+}
+.form-card h2{
+  margin:0 0 8px;
+  color:var(--navy);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:32px;
+}
+.form-card .intro{
+  margin:0 0 22px;
+  color:#526176;
+}
+.form-row{margin-bottom:16px}
+label{
+  display:block;
+  margin-bottom:6px;
+  font-size:14px;
+  font-weight:800;
+  color:var(--navy);
+}
+input,textarea,select{
+  width:100%;
+  border:1px solid #ccd3dc;
+  border-radius:4px;
+  padding:11px 12px;
+  font:inherit;
+  font-size:15px;
+  background:#fff;
+  color:#172b45;
+}
+textarea{min-height:130px;resize:vertical}
+.checkbox{
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+  font-weight:400;
+  line-height:1.45;
+}
+.checkbox input{width:auto;margin-top:5px}
+.form-button{
+  border:0;
+  background:var(--red);
+  color:#fff;
+  padding:12px 18px;
+  border-radius:4px;
+  font-weight:800;
+  cursor:pointer;
+}
+.form-button:hover{filter:brightness(.9)}
+.form-note{
+  margin-top:18px;
+  padding:12px;
+  background:#f1f3f6;
+  border-left:3px solid var(--red);
+  font-size:13px;
+  line-height:1.5;
+  color:#58677b;
+}
+.back{
+  display:inline-block;
+  margin-top:25px;
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+}
+.back:hover{color:var(--red)}
+footer{
+  background:#030303;
+  border-top:1px solid #222;
+  padding:35px 25px;
+  text-align:center;
+  color:#999;
+}
+footer a{color:#fff;text-decoration:none}
+@media(max-width:900px){
+  .header-inner{flex-direction:column;align-items:center}
+  nav{justify-content:center}
+}
+@media(max-width:600px){
+  header{padding:15px}
+  .logo{width:180px}
+  nav a{font-size:12px;padding:8px 9px}
+  main{padding:50px 20px 65px}
+  h1{font-size:40px}
+  .lead{font-size:16px}
+  .form-card{padding:22px}
+}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="/"><img src="/logo.png" alt="Restore Britain"></a>
+    <nav aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/policies/">Policies</a>
+      <a href="/torfaen/">Torfaen</a>
+      <a href="/foi/">FOI</a>
+      <a href="/news/">News</a>
+      <a href="/contact/">Contact</a>
+      <a href="/members/" class="members">🔐 Members</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="eyebrow">TORFAEN LOCAL BRANCH</div>
+  <h1>Raise a Local Issue</h1>
+  <p class="lead">
+    Have you noticed something in Torfaen that you think deserves further
+    investigation? Use the form below to send a suggestion to the branch.
+    You do not have to be a member to make a suggestion.
+  </p>
+
+  <section class="form-card" aria-labelledby="form-title">
+    <h2 id="form-title">Local issue form</h2>
+    <p class="intro">Please provide as much useful information as you can.</p>
+
+    <form id="local-issue-form" action="mailto:torfaen@restorebritain-torfaen.uk" method="post">
+      <div class="form-row">
+        <label for="issue">What would you like us to look into?</label>
+        <input id="issue" name="issue" type="text" required>
+      </div>
+
+      <div class="form-row">
+        <label for="type">Type of issue</label>
+        <select id="type" name="type">
+          <option>Possible FOI</option>
+          <option>Local concern</option>
+          <option>Something to investigate</option>
+          <option>Campaign idea</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="foi">Could this be an FOI?</label>
+        <select id="foi" name="foi">
+          <option>Yes</option>
+          <option>No</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="details">Tell us more</label>
+        <textarea id="details" name="details" required></textarea>
+      </div>
+
+      <div class="form-row">
+        <label for="name">Name <span style="font-weight:400">(optional)</span></label>
+        <input id="name" name="name" type="text">
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email <span style="font-weight:400">(optional)</span></label>
+        <input id="email" name="email" type="email">
+      </div>
+
+      <div class="form-row">
+        <label class="checkbox">
+          <input type="checkbox" name="contact_ok">
+          <span>I'm happy for the branch to contact me.</span>
+        </label>
+      </div>
+
+      <button class="form-button" type="submit">Submit suggestion</button>
+
+      <div class="form-note">
+        Your email app will open with the details addressed to the Torfaen branch.
+        Review the message and press Send to submit it. No information is sent
+        automatically by this website.
+      </div>
+      <p id="form-status" role="status" hidden></p>
+    </form>
+  </section>
+
+  <a class="back" href="/">← Return to the front page</a>
+</main>
+
+<footer>
+  Restore Britain Torfaen Local Branch
+</footer>
+
+<script>
+(function () {
+  const form = document.getElementById("local-issue-form");
+  if (!form) return;
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const data = new FormData(form);
+    const subject = "Torfaen local issue: " + String(data.get("issue") || "").trim();
+    const body = [
+      "What would you like us to look into: " + (data.get("issue") || ""),
+      "Type of issue: " + (data.get("type") || ""),
+      "Could this be an FOI?: " + (data.get("foi") || ""),
+      "",
+      "Details:",
+      data.get("details") || "",
+      "",
+      "Name: " + (data.get("name") || "Not provided"),
+      "Email: " + (data.get("email") || "Not provided"),
+      "Permission to contact: " + (data.get("contact_ok") ? "Yes" : "No")
+    ].join("\n");
+
+    const status = document.getElementById("form-status");
+    status.hidden = false;
+    status.style.color = "#172b45";
+    status.style.marginTop = "16px";
+    status.textContent = "Opening your email app. Please review the message and press Send.";
+
+    window.location.href = "mailto:torfaen@restorebritain-torfaen.uk?subject=" +
+      encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
